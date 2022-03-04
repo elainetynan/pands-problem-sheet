@@ -11,6 +11,7 @@ import os
 # call program from command line like this: python es.py moby-dick.txt
 
 def countEs(text):
+    text = text.lower()
     count = 0
     for letter in text:
         if letter == "e":
