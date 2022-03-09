@@ -6,6 +6,9 @@ I was sick with covid the last 2 weeks (Weeks 5 & 6) I'm not sure if the instruc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Week 02
+I didn't need to do any research on how to calculate the bmi as Andrew has it on the Moodle page in the task description. I did however, do some research on how format output in python. I found a nice resource on geeksforgeeks.org at this address:
+https://www.geeksforgeeks.org/python-output-formatting/
+
 Having come from a java backgroud I am finding I am making simple syntax errors such as putting in semi-colons and using brackets in loops, if-statements, etc.
 
 Weekly Problem Sheet
@@ -61,7 +64,8 @@ Week 06
 squareRoot.py takes a positive floating-point number as input and outputs
 an approximation of its square root.
 
-I did some research on the newton method. Immediate;y I found the answr invarious language. I read the java code to find out how to do the calculation and then with that knowledge wrote the python code.
+I did some research on the newton method. Immediately I found the answer invarious languages. I read the java code to find out how to do the calculation and then with that knowledge wrote the python code. See the link here:
+https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/#:~:text=Let%20N%20be%20any%20number,correct%20square%20root%20of%20N.
 
 Weekly problem sheet
 The code asks the uiser to enter a number to get a square root of, if the user inserts 0 or less it tells them this is not a valid number for getting a square root, otherwise it calls the function to get the square root and prints the answer to the screen.
