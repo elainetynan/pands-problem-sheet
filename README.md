@@ -1,6 +1,14 @@
 # pands-problem-sheet
 Weekly problem sheets
 
+09/03/2022
+This week I firstly made changes to my existing repository based on feedback from Andrew. The changes are as folows:
+    I updated the Readme file (included references where appropriate as well as other minor changes)
+    I removed all folders and just put all the weekly taks into the repository directly.
+    I renamed Task05.py to weekday.py
+    I made changes to some of the weekly tasks (secondString.py & weekday.py) based on the feedback recieved. These changes are documented in the comments in each python program.
+
+04/03/2022
 I was sick with covid the last 2 weeks (Weeks 5 & 6) I'm not sure if the instructions for the problem sheet went up before that, if so I don't know how I missed them. If it was in week 5 or 6, I did do the work but having gone back over it, I realise my head really wasn't right at the time.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,3 +114,7 @@ The final line in the code calls the method in a print statement to print the nu
 To call the program form the command line where the file name is 'moby-dick.txt' you would input the following command:
     python es.py moby-dick.txt
 (es.py is the name of the program)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Week 08
