@@ -118,3 +118,13 @@ To call the program form the command line where the file name is 'moby-dick.txt'
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Week 08
+This week I did the plottask.py weekly task.
+Here I was to create a plots with 2 plots on it for the x axis values from 0 to 4 and the g(x) = x squared and h(x) = x cubed.
+I did some research on formatting the plot title and how to rotate the axis labels and included the links for reference in the code.
+This is definitely an 'instant gratification' type of learning. Seeing the graphs appear with such a good finish but from such little code was very rewarding.
+
+In plottask.py I firstly set the min and max x values. Numpy uses the range from the min up to but not including the max value so I put in the values 0 & 5 to get the values from 0 to 4.
+Next I got the range of values for f(x), g(x) and h(x). I ploted g(x) with the f(x) and then the h(x) with the f(x) on 1 plot. I set labels and colours for each.
+Next I turned on the minor ticks and set the axes labels, rotating the y-axis label so that it is horizontal.
+The last part is to set the Title of the plot. BEfore doing this I set up a dictionary to format the text of the title. The dict stores the font family, colour, weight and size. Once this was set up I set the title, passing this dict in for formatting.
+The final thing was to show and/or save the plot.
