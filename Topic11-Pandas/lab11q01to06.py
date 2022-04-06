@@ -31,10 +31,12 @@ print("~~~~~~~~~~~~~~~~~~~~~")
 print()
 
 path = "./data/"
-csvFilename = path+'grades.csv'
+#csvFilename = path+'grades.csv'
+csvFilename = 'grades.csv'
 df.to_csv(csvFilename)
 
-excelFilename = path+'grades.xlsx'
+#excelFilename = path+'grades.xlsx'
+excelFilename = 'grades.xlsx'
 df.to_excel(excelFilename, index=False, sheet_name='data')
 
 with pd.ExcelWriter(excelFilename, engine='openpyxl', mode='a') as writer:

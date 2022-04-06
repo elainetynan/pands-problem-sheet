@@ -128,3 +128,66 @@ Next I got the range of values for f(x), g(x) and h(x). I ploted g(x) with the f
 Next I turned on the minor ticks and set the axes labels, rotating the y-axis label so that it is horizontal.
 The last part is to set the Title of the plot. BEfore doing this I set up a dictionary to format the text of the title. The dict stores the font family, colour, weight and size. Once this was set up I set the title, passing this dict in for formatting.
 The final thing was to show and/or save the plot.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Week 09
+This week we worked with errors, testing and logging.
+It was really useful to be able to test the code in the current class without having to remove the code or comment it out afterwards. Having come form a Java background I am not aware of a way to do this in Java so I reallly liked this feature in python. The assert statement works in a similar fashion to the Java Assert class but I would ony previously have used it in formal testing in Java.
+Another thing that s really useful is the logging feature. It is useful to change the level of logging based on what you are doing. Again, it saves you the effort of having to remove or comment out code for production.
+
+When doing the work for lab 9, I firstly set up the definition of the function in the file called myFunctions.py, it initially returned an empty list. This allowed me to set up the tests passing in the values 7, 11, 0 and 1. I also set up lists of the expected output for each value passed in (7, 11, 0 & 1). Next I used the assert statements to verify the returned list from the fibonacci function matched the expected output for each value passed in. Initially 3 of 4 of these tests failed as the function was simply returning an empty list. The call where 0 was passed in actually passes because the output should be an empty list.
+
+Once the test were set up and run while the code was not complete (and therefore failing) I was ready to start wriing the code for the fibonacci series.
+In the function we start with setting up the first 2 values (a=0 & b=1) and teh list with the first value (0) already in it. Then we loop through all of the values up to the numbers passed in and append the next value. First time through the loop that is 1 as b has been set to 1. After this, a is set equal to the value stoore in b abd b becobes equal to the value of a plus b. This is done in a shorthand way that allows it all to happen in 1 statment, if it were to be done seperate a temporary valriable would be required as follows:
+    tmp = a
+    a = b
+    b = tmp + b
+
+Next the test for a negative number was put in place. In the fibonacci function if a negative value (less than 0) is passed in, a ValueError is returned so we must enclose our test with a nagative number in a try-except block, which displays the fail message if a ValueError is returned. This is similar to how a try-catch block works in Java when an exception is thrown.
+
+Finally the last check is for the value 0 being passed in, in this case an empty list is simply returned.
+
+At this point the tests are run again and should pass, meaning that the lists returned each time match the expected output(list)
+
+Finally the file useFib.py is created to ask the user to enter a value which is then passed to the function and display the corresponding fibonacci numbers. This allowed us to keep the testing and logging in the original code but when called from elsewhere (useFib.py) it does not show any of the logging, etc, just the desired output.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Week 10
+This week were were working with objects. I have experience with object oriented programming through Java and C# so the terminology was familiar to me. To me, the differences I observed compared to Java are:
+Everything is done inside classes, whereas in Python classes are used only when needed. I ca see the advantages to this, especially for smaller pieces of code but it still feels a little strange to me.
+The other thing that is done differnetly is that the constructor is always called __init__ as opposed to the same name as the class in Java and I must remember top always pass in self so that I can access the object. Personally I prefer the use of the keywords super and this from Java, but that is probably becuase I am more familiar with them.
+Another difference is that by using self. anywhere in the code we can set up attributes. In java attributes are generally all listed together, often at the top of the class which makes it very easy to see the structure of the object/class at a glance.
+
+
+In the lab we created a simple Timesheetentry class that had 3 attributes that were set in the construre using the parameters passed in. The attributes were project, start and duration.
+We then created the __str__ function (similar to toString in Java) to return a string representation of the class/object. Finally in this part of the lab we did some testing to create some TimesheetEntry objects and display them using the __str_ function.
+
+Next we created another class called Employee, this class had an attribute that was a list of TimesheetEntry objects (this is known as composition) it also had  2 attribtes for first and last name that were set in the constructor. Similar to the first class we also created a __str__ function that retuned a string of teh first and last names concatedated with a space between them. Then we did some testing to create some Employee objects and display them, again using the __str_ function. We checked that the first and last names were set using the assert statement.
+Next we created a function that got the currect system time and created a Timesheet Entry object with the current datetime and added it to the list (the attribute) of Timesheetentry objects.
+The next function gets the total time spent on all the TimesheetEntries by adding the duration of each Timesheetentry to a running total in a loop.
+The last part of the lab is simply a test to create an employee, verify that the first and last name are set correctly, then log to Timesheet Entries, get the total time and display and verify it is correct.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Week 11
+This week we looked at Pandas. This is a tool in python to analyse and manipulate data.
+This seems like a really useful tool and with this and all the plotting functions we have seen this semester I can see why Python is so popular in data analytics.
+
+This lab is broken into 2 parts.
+
+In question 1 to 6 we initially create data (a list of lists) and with this data we set up a dataframe (a adataframe is a data structure that allows you to store data in rows and columns, like an excel sheet or a table in a database). When setting up the dataframe we give names to the columns, which is a really useful feature.
+We then display information from the dataframe using various functions in DAtaframe. Firstly we used the ehad function (passing in 3) to display the first 3 rows of data.
+Next we use the describe function to print out various descriptive statistics such as mean, count, standard deviation, etc.
+In the next print command we display the type of data class that the decribe function is stored in ('pandas.core.frame.DataFrame').
+NExt we send the dataframe to a csv file, with a given name and it creates teh file in the correct location (according to path) with the given name. Similarly we then send the dataframe to an excel file.
+Finally in the first part we get the mean of the grade abd display it.
+
+In questions 7 to 16 we again create a dataframe beut this time we get the data from a log file called access.log. We inform the Pandas read_csv function that the fields are separated by a space, that the file has no header and give it a list of column names to use. Next we drop any columns that just have dashed in them as this is not useful data. Next we format the time to make it look more aesthetically pleasing by dropping the square brackets at the start and end. WE then looked at the first 10 rows using iloc (which stands for integer location ref: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iloc.html). Then we format the date so that it prints out the date followed by the time (more on this at: https://docs.python.org/3/library/datetime.html#strftime-andstrptime-behavior).
+Then we looked at getting data from the dataframe between 2 dates. This can be done in at least 3 ways. The first wasy was using the loc function, the second using the series between function, the third and final way was by setting the index to the date column which is obviously really useful to be able to change the index when needed.
+Finally we got the sample average (mean) every 30 minutes and plotted it.
+As an extra task we were asked to plot a rolling average over 6 hours for every hours. I have tried this and have managed to get some plots but I'm not sure if tehy are correct.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

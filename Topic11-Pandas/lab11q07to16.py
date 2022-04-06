@@ -42,7 +42,7 @@ newvalue = re.search('[\w:/]+', x).group()
 return newvalue
 df['time'] = df['time'].apply(getNewValue)
 '''
-#print(df.iloc[0]) # print the first 10 rows
+#print(df.iloc[10]) # print the first 10 rows
 #print(df.dtypes)
 
 # this is not a normal date time format so we need to specify it
@@ -50,7 +50,7 @@ df['time'] = df['time'].apply(getNewValue)
 # https://pandas.pydata.org/pandasdocs/stable/reference/api/pandas.to_datetime.html?highlight=to_datetime
 df['time'] = pd.to_datetime(df['time'], format='%d/%b/%Y:%H:%M:%S')
 
-#print(df.iloc[0]) # print the first 10 rows
+#print(df.iloc[10]) # print the first 10 rows
 #print(df.dtypes)
 
 ########################################################
@@ -83,7 +83,9 @@ plt.show()
 
 #downloadSamples2 = df['size of response'].resample(rule='360Min').mean() # every 6 hours
 #downloadSamples2 = df['size of response'].resample(rule='30Min').rolling(12).mean()
-downloadSamples2 = df['size of response'].rolling(12).mean()
-print(downloadSamples)
+#downloadSamples2 = df['size of response'].rolling(12).mean()
+#downloadSamples2 = df.rolling(12).mean()
+downloadSamples2 = df['size of response'].rolling(rule='360Min').mean()
+print(downloadSamples2)
 downloadSamples2.plot()
 plt.show()
